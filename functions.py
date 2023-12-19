@@ -1,29 +1,56 @@
-# Funtion 1
-# Create and define a function called show_personal_information(), which contains name, home city and profession
 def show_personal_information():
     name = "Eemil Halkola"
     home_city = "Rovaniemi"
     profession = "Machine learning student"
-    print(f"{name}\n{home_city}\n{profession}")
-    return name, home_city, profession
+    print(f"{name}")
+    print(f"{home_city}")
+    print(f"{profession}")
 
 
-# Show the information to the user
-callable(show_personal_information())
-
-# Funtion 2
-# Create a function count_seconds(hours, minutes, seconds), which takes hours, minutes and seconds as parameters
-# Define count_seconds(hours, minutes, seconds)
-def count_seconds(hours, minutes, seconds:
-    total_seconds = ((hours * 3600) + (minutes * 60) + seconds),
+# Function 2
+# Create a function count_seconds(hours, minutes, seconds), which defines hours, minutes and seconds to total seconds
+def count_seconds(hours, minutes, seconds):
+    total_seconds = ((hours * 3600) + (minutes * 60) + seconds)
     return total_seconds
 
-user_input = input("Input hours, minutes and seconds: ")
-example = "2h 25min 33sec"
-print(example)
 
-for hours, minutes, seconds in user_input:
-    time = user_input.split("_")
-    hours = time[0]
-    minutes = time[1]
-    seconds = time[2]
+# Funtion 3
+# Create a function _magazine_serial_check(serial), which defines/checks if user input is Valid or Incorrect ISSN
+def magazine_serial_check(issn_serial):
+    # Check if the length of the serial is 9 and the 5th character is a dash
+    if len(issn_serial) == 9 and issn_serial[4] == '-':
+        # Check if the first 4 characters are numeric and the last 4 characters are alphanumeric
+        if issn_serial[:4].isdigit() and issn_serial[5:].isdigit():
+            return True
+    else:
+        return False
+
+
+# Function 4
+# Create a function show_number_list, which numerates participants to be sorted with the help of sorted(lambda) function
+# in the code
+def show_number_list(title, data):
+    print(title)
+    for i, participant in enumerate(data, start=1):
+        print(f"{i}. {participant}")
+
+# Function 5
+import math
+
+
+# Create function to calculate the volume of a box
+def box_volume(height, width, depth):
+    volume = height * width * depth
+    return round(volume, 2)
+
+
+# Create a function to calculate the volume of a ball
+def ball_volume(radius):
+    volume = (4 * math.pi * radius ** 3) / 3
+    return round(volume, 2)
+
+
+# Create function to calculate the volume of a pipe
+def pipe_volume(radius, length):
+    volume = math.pi * radius ** 2 * length
+    return round(volume, 2)
